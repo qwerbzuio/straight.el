@@ -1,6 +1,6 @@
 .PHONY: all
 all:
-	@elint/elint checkdoc compile longlines toc
+	@elint/elint checkdoc compile longlines links
 
 .PHONY: travis
 travis:
@@ -23,9 +23,9 @@ compile:
 longlines:
 	@elint/elint longlines
 
-.PHONY: toc
-toc:
-	@elint/elint toc
+.PHONY: links
+links:
+	@scripts/check-markdown-links.py docs
 
 .PHONY: clean
 clean:

@@ -1,0 +1,11 @@
+site_name: straight.el documentation
+theme: readthedocs
+pages:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Conceptual overview: concepts.md
+  - Comparisons: comparisons.md
+  - User manual: user-manual.md
+  - Developer manual: dev-manual.md
+  - Contributing: contributing.md
+  - Miscellaneous: misc.md

@@ -1,4 +1,10 @@
+#!/usr/bin/env bash
+
 task checkdoc straight.el
 task compile straight.el bootstrap.el install.el
-task longlines *.el *.md .gitignore .gitmodules .travis.yml checkers/* Makefile
-task toc README.md
+task longlines *.el *.md docs/*.md .gitignore .gitmodules \
+     .travis.yml checkers/* Makefile
+
+# Local Variables:
+# flycheck-shellcheck-excluded-warnings: ("SC2035")
+# End:
