@@ -5043,7 +5043,7 @@ according to the value of `straight-profiles'."
           (message "Wrote %s" lockfile-path))))))
 
 ;;;###autoload
-(defun straight-thaw-versions ()
+(defun straight-thaw-versions (&optional package-list)
   "Read version lockfiles and restore package versions to those listed."
   (interactive)
   (let ((versions-alist (straight--get-versions)))
@@ -5058,7 +5058,9 @@ according to the value of `straight-profiles'."
              (when-let ((commit (cdr (assoc local-repo versions-alist))))
                (unless (straight-vc-commit-present-p recipe commit)
                  (straight-vc-fetch-from-remote recipe))
-               (straight-vc-check-out-commit recipe commit)))))))))
+               (straight-vc-check-out-commit recipe commit))))))
+     (lambda (package-name)
+       (find (intern package-name) package-list)))))
 
 ;;;; Integration with other packages
 ;;;;; package.el "integration"
